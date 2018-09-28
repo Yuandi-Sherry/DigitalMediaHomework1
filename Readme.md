@@ -20,7 +20,7 @@
 
 可执行文件：./Question2/codes/index.html
 
-（修改预期的颜色之后需要在空白处单击鼠标可以使图像变化）
+（请使用Firefox浏览器，Chrome无法运行，修改预期的颜色数量之后需要在空白处单击鼠标可以使图像变化）
 
 实现效果：./Question2/results
 
@@ -28,5 +28,5 @@
 
 ## 实验报告
 
-Report.docx
+./Report.docx
 
