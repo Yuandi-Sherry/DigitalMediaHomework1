@@ -4,11 +4,9 @@ class MedianCut {
     let ctx = canvas.getContext("2d");
     this.imageData = ctx.createImageData(imageData.width, imageData.height);
     this.imageData.data.set(imageData.data);
-    //console.error(`Cube could not be split.`);
     // 统计颜色信息
     this.data = this.imageData.data;
-    this.colors = this.getColorsInfo(imageData);
-    
+    this.colors = this.getColorsInfo(imageData); 
     this.cubes = []; // 存放被分隔的立方体数组
   }
 
@@ -16,15 +14,13 @@ class MedianCut {
     var colorsCount = {}; // 将颜色信息 - 颜色出现次数作为key - value形式存储
     var index = 0; // 所在imageData一维数组中的下标
     for (var index = 0; index < this.data.length; ) {
-     // for (var j = 0; j < this.imageData.height; j++) {
-        var key = `${ this.data[index] },${ this.data[index+1] },${ this.data[index+2] }`;
-        if(colorsCount[key]) {
-          colorsCount[key]++;
-        } else {
-          colorsCount[key] = 1;
-        }
-        index += 4;
-     // }
+      var key = `${ this.data[index] },${ this.data[index+1] },${ this.data[index+2] }`;
+      if(colorsCount[key]) {
+        colorsCount[key]++;
+      } else {
+        colorsCount[key] = 1;
+      }
+      index += 4;
     }
 
     var colorsAsArray = [];
@@ -84,16 +80,14 @@ class MedianCut {
         ans[ans.length] = cubes[i];
       }
     }
-    
+
     ans[ans.length] = cube1;
     ans[ans.length] = cube2;
-
     if(ans.length < aimedColorLength) {
       return this.medianCut(ans,aimedColorLength);
     } else {
       return ans;
     }
-
   }
   /**
    * 存储每个cube的信息，包含颜色数组{r,g,b.amount}
@@ -104,9 +98,7 @@ class MedianCut {
     var detailedCube = [];
     var type = 'r';
     var minR = 255, maxR = 0, minG = 255, maxG = 0, minB = 255, maxB = 0;
-    /*if(colors.length == 0) {
-      console.log('colors.length == 0');
-    }*/
+
     for(var i = 0; i < colors.length; i++) {
       total += colors[i].amount;
       minR = Math.min(minR, colors[i].r);
@@ -160,7 +152,6 @@ class MedianCut {
   run (aimedColorLength) {
     var priCube = [this.transInfoToCube(this.colors)];
     this.cubes = this.medianCut(priCube, aimedColorLength);
-    //console.log('this.cubes.length '+ this.cubes.length);
     var aveColors = this.calculateAve();
     var tempRGB;
     var pixelColors = {};

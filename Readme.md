@@ -16,6 +16,8 @@
 
 源代码：./Question2/codes/
 
+算法实现文件：./Question2/codes/medianCut.js
+
 可执行文件：./Question2/codes/index.html
 
 （修改预期的颜色之后需要在空白处单击鼠标可以使图像变化）
