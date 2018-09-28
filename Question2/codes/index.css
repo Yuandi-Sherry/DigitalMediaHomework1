@@ -1,0 +1,10 @@
+h1, #original, #modified, #ColorSize  {
+  text-align: center;
+  font-family: 'Montserrat', 'Arial', sans-serif;
+}
+#ColorSize 
+{
+	margin-bottom: 50px;
+	height: 20px;
+	font-size: 20px;
+}

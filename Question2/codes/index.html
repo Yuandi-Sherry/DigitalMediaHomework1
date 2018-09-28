@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Implementation of Median Cut Algorithm</title>
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<script src="jquery-1.7.2.min.js"></script>
+	<script src="index.js"></script>
+	<script src="medianCut.js"></script>
+</head>
+<body>
+	<h1>Implementation of Median Cut Algorithm</h1>
+	<div id="original">
+		<h2>Original Image</h2>
+		<img src="redapple.jpg" id="originalImage" hidden="hidden">
+		<canvas id="originalImageCanvas" ></canvas>
+	</div>
+	<div id="modified">
+		<h2>Modified Image</h2>
+		<div>
+			<input type="number" placeholder="please input your color size" min = '2' max = '1024' id="ColorSize" value="2">
+		</div>
+		
+		<canvas id="modifiedImageCanvas"></canvas>
+	</div>
+</body>
+</html>
